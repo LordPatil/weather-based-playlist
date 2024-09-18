@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist for {{ city }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in {{ city }}: {{ weather }}</h1>
+        <p>Temperature: {{ temp }}°C</p>
+        <p>Recommended Playlist:</p>
+        
+        <!-- Embed Spotify Playlist -->
+        <iframe src="https://open.spotify.com/embed/playlist/{{ playlist_id }}" 
+                width="300" height="380" 
+                frameborder="0" 
+                allowtransparency="true" 
+                allow="encrypted-media"></iframe>
+    </div>
+</body>
+</html>
