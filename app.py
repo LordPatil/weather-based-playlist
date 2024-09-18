@@ -4,10 +4,6 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-if os.getenv("FLASK_ENV") == "development":
-    from dotenv import load_dotenv
-    load_dotenv()
-
 # Spotify API setup
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id=os.getenv('SPOTIPY_CLIENT_ID'),
