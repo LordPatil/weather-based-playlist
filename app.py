@@ -1,11 +1,12 @@
 import requests
 from flask import Flask, render_template, request
 import os
-from dotenv import load_dotenv
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-load_dotenv()
+if os.getenv("FLASK_ENV") == "development":
+    from dotenv import load_dotenv
+    load_dotenv()
 
 # Spotify API setup
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
@@ -15,7 +16,6 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     scope="user-library-read playlist-read-private"
 ))
 
-load_dotenv()
 
 app = Flask(__name__)
 
