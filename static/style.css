@@ -125,7 +125,7 @@ input[type="text"], select {
         padding: 1.5rem;
     }
 }
-
+/* 
 .creator-info {
     position: fixed;
     bottom: 10px;
@@ -134,14 +134,14 @@ input[type="text"], select {
     color: rgba(255, 255, 255, 0.7);
     z-index: 1000;
 
-    /* Adjust font size based on zoom level */
+    
     @media (zoom: 150%) {
         font-size: 0.6rem;
     }
     @media (zoom: 200%) {
         font-size: 0.4rem;
     }
-    /* Add more media queries for other zoom levels as needed */
+    
 }
 
 .creator-info a {
@@ -151,4 +151,4 @@ input[type="text"], select {
 
 .creator-info a:hover {
     text-decoration: underline;
-}
+} */
