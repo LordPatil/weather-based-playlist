@@ -1,70 +1,145 @@
-/* Global Styling */
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4db6ac;
+    --background-color: #1a1a2e;
+    --text-color: #ffffff;
+    --card-background: #16213e;
+}
+
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    background-image: 
+        linear-gradient(30deg, #0f3460 12%, transparent 12.5%, transparent 87%, #0f3460 87.5%, #0f3460),
+        linear-gradient(150deg, #0f3460 12%, transparent 12.5%, transparent 87%, #0f3460 87.5%, #0f3460),
+        linear-gradient(30deg, #0f3460 12%, transparent 12.5%, transparent 87%, #0f3460 87.5%, #0f3460),
+        linear-gradient(150deg, #0f3460 12%, transparent 12.5%, transparent 87%, #0f3460 87.5%, #0f3460),
+        linear-gradient(60deg, #0f346077 25%, transparent 25.5%, transparent 75%, #0f346077 75%, #0f346077), 
+        linear-gradient(60deg, #0f346077 25%, transparent 25.5%, transparent 75%, #0f346077 75%, #0f346077);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-/* Container */
 .container {
-    text-align: center;
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    max-width: 800px;
+    width: 90%;
+    padding: 2rem;
+    background-color: rgba(26, 26, 46, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
-/* Headings */
-h1 {
-    font-size: 2rem;
-    color: #00ff7f;
-    margin-bottom: 20px;
+.title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Paragraph */
-p {
+.highlight {
+    color: var(--secondary-color);
+}
+
+.subtitle {
     font-size: 1.2rem;
-    margin: 10px 0;
+    margin-bottom: 2rem;
 }
 
-/* Spotify Embed Styling */
-iframe {
-    border: none;
-    margin-top: 20px;
-    border-radius: 8px;
+.card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Button Styling */
-button {
-    background-color: #00ff7f;
-    color: #121212;
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4db6ac;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(22, 33, 62, 0.8);
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
     border: none;
-    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
-button:hover {
-    background-color: #00cc66;
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
 }
 
-/* Input Styling */
-input[type="text"] {
-    padding: 10px;
-    font-size: 1rem;
-    width: 80%;
-    border-radius: 5px;
-    border: 1px solid #555;
-    margin-bottom: 20px;
-    background-color: #333;
-    color: #ffffff;
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.playlist-container {
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+.creator-info {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+}
+
+.creator-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.creator-info a:hover {
+    text-decoration: underline;
 }

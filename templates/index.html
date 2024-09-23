@@ -3,16 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-Based Playlist</title>
+    <title>Mood & Weather Playlist Generator</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Enter City</h1>
-        <form action="/weather" method="POST">
-            <input type="text" name="city" placeholder="City name">
-            <button type="submit">Get Playlist</button>
-        </form>
+        <header>
+            <h1 class="title">Spotify <span class="highlight">Playlist Generator</span></h1>
+            <p class="subtitle">Tune in to your world: Weather-inspired melodies, mood-matching rhythms, or a dash of musical serendipity!</p>
+        </header>
+        <main>
+            <div class="card weather-card">
+                <h2>Weather-Based Playlist</h2>
+                <form action="/weather" method="POST" class="form">
+                    <input type="text" name="city" placeholder="Enter a city" required>
+                    <button type="submit" class="btn btn-primary">Get weather based Playlist</button>
+                </form>
+            </div>
+            <div class="card mood-card">
+                <h2>Mood-Based Playlist</h2>
+                <form action="/mood" method="POST" class="form">
+                    <select name="mood" required>
+                        <option value="" disabled selected>Select your mood</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Energetic">Energetic</option>
+                        <option value="Relaxed">Relaxed</option>
+                        <option value="Romantic">Romantic</option>
+                        <option value="Rain">Rain</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Get mood based Playlist</button>
+                </form>
+            </div>
+            <div class="card random-card">
+                <h2>Feeling Adventurous?</h2>
+                <a href="/random" class="btn btn-secondary">Get a Random Playlist</a>
+            </div>
+        </main>
+    </div>
+    <div class="creator-info">
+        <p>Created by lordpatil | Contact: <a href="mailto:suggestions@example.com">chiragnpatil@gmail.com</a> | v0.1.2</p>
     </div>
 </body>
 </html>

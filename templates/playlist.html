@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist for {{ city }}</title>
+    <title>Your Personalized Playlist</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Weather in {{ city }}: {{ weather }}</h1>
-        <p>Temperature: {{ temp }}°C</p>
-        <p>Recommended Playlist:</p>
-        
-        <!-- Embed Spotify Playlist -->
-        <iframe src="https://open.spotify.com/embed/playlist/{{ playlist_id }}" 
-                width="300" height="380" 
-                frameborder="0" 
-                allowtransparency="true" 
-                allow="encrypted-media"></iframe>
+        <header>
+            {% if weather %}
+                <h1 class="title">Weather in <span class="highlight">{{ city }}</span>: {{ weather }}</h1>
+                <p class="subtitle">Temperature: {{ temp }}°C</p>
+            {% elif mood %}
+                <h1 class="title">Playlist for your <span class="highlight">{{ mood }}</span> mood</h1>
+            {% else %}
+                <h1 class="title">Your <span class="highlight">Random</span> Playlist</h1>
+            {% endif %}
+        </header>
+        <main>
+            <div class="playlist-container">
+                <iframe src="https://open.spotify.com/embed/playlist/{{ playlist_id }}"
+                        width="100%" height="380"
+                        frameborder="0"
+                        allowtransparency="true"
+                        allow="encrypted-media"></iframe>
+            </div>
+            <div class="actions">
+                <a href="/" class="btn btn-primary">Back to Home</a>
+                <a href="/random" class="btn btn-secondary">Get a Random Playlist</a>
+            </div>
+        </main>
+    </div>
+    <div class="creator-info">
+        <p>Created by lordpatil | Contact: <a href="mailto:suggestions@example.com">chiragnpatil@gmail.com</a> | v0.1.2</p>
     </div>
 </body>
 </html>
